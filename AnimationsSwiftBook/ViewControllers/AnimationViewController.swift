@@ -17,18 +17,20 @@ class AnimationViewController: UIViewController {
     @IBOutlet var forceLabel: UILabel!
     @IBOutlet var durationLabel: UILabel!
     @IBOutlet var delayLabel: UILabel!
+    
+    var nextAnimation: AnimationModel? = nil
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let animation = AnimationModel.getRandom() {
             springAnimationViewConfigure(animation)
+            nextAnimation = animation
         }
-        
     }
     
     @IBAction func runButtonPressed(_ sender: UIButton) {
-        guard let animation = AnimationModel.getRandom() else { return }
+        guard let animation = nextAnimation else { return }
+        nextAnimation = AnimationModel.getRandom()
         
         springAnimationView.animation = animation.preset
         springAnimationView.curve = animation.curve
@@ -40,7 +42,9 @@ class AnimationViewController: UIViewController {
         
         springAnimationViewConfigure(animation)
         
-        sender.setTitle("Run \(animation.preset)", for: .normal)
+        if let animation = nextAnimation {
+            sender.setTitle("Run \(animation.preset)", for: .normal)
+        }
     }
     
     private func springAnimationViewConfigure(_ animation: AnimationModel) {
