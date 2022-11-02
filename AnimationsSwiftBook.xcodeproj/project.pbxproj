@@ -14,7 +14,7 @@
 		C443CF35291126F600C6D4F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C443CF34291126F600C6D4F9 /* Assets.xcassets */; };
 		C443CF38291126F600C6D4F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C443CF36291126F600C6D4F9 /* LaunchScreen.storyboard */; };
 		C443CF412911283400C6D4F9 /* SpringAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = C443CF402911283400C6D4F9 /* SpringAnimation */; };
-		C443CF43291135A400C6D4F9 /* AnimationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C443CF42291135A400C6D4F9 /* AnimationModel.swift */; };
+		C443CF43291135A400C6D4F9 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C443CF42291135A400C6D4F9 /* Animation.swift */; };
 		C443CF452911424E00C6D4F9 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C443CF442911424E00C6D4F9 /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +27,7 @@
 		C443CF34291126F600C6D4F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C443CF37291126F600C6D4F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C443CF39291126F600C6D4F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C443CF42291135A400C6D4F9 /* AnimationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationModel.swift; sourceTree = "<group>"; };
+		C443CF42291135A400C6D4F9 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		C443CF442911424E00C6D4F9 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +76,7 @@
 		C443CF462911425F00C6D4F9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C443CF42291135A400C6D4F9 /* AnimationModel.swift */,
+				C443CF42291135A400C6D4F9 /* Animation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,7 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C443CF43291135A400C6D4F9 /* AnimationModel.swift in Sources */,
+				C443CF43291135A400C6D4F9 /* Animation.swift in Sources */,
 				C443CF452911424E00C6D4F9 /* DataStore.swift in Sources */,
 				C443CF30291126F500C6D4F9 /* AnimationViewController.swift in Sources */,
 				C443CF2C291126F500C6D4F9 /* AppDelegate.swift in Sources */,

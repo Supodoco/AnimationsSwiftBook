@@ -12,47 +12,29 @@ class AnimationViewController: UIViewController {
     
     @IBOutlet var springAnimationView: SpringView!
     
-    @IBOutlet var presetLabel: UILabel!
-    @IBOutlet var curveLabel: UILabel!
-    @IBOutlet var forceLabel: UILabel!
-    @IBOutlet var durationLabel: UILabel!
-    @IBOutlet var delayLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
     
-    var nextAnimation: AnimationModel? = nil
+    var nextAnimation = Animation.getRandomAnimation()
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let animation = AnimationModel.getRandom() {
-            springAnimationViewConfigure(animation)
-            nextAnimation = animation
-        }
+        descriptionLabel.text = nextAnimation.description
     }
     
     @IBAction func runButtonPressed(_ sender: UIButton) {
-        guard let animation = nextAnimation else { return }
-        nextAnimation = AnimationModel.getRandom()
+        descriptionLabel.text = nextAnimation.description
         
-        springAnimationView.animation = animation.preset
-        springAnimationView.curve = animation.curve
-        springAnimationView.force = animation.force
-        springAnimationView.duration = animation.duration
-        springAnimationView.delay = animation.delay
+        springAnimationView.animation = nextAnimation.preset
+        springAnimationView.curve = nextAnimation.curve
+        springAnimationView.force = nextAnimation.force
+        springAnimationView.duration = nextAnimation.duration
+        springAnimationView.delay = nextAnimation.delay
         
         springAnimationView.animate()
+                
+        nextAnimation = Animation.getRandomAnimation()
         
-        springAnimationViewConfigure(animation)
-        
-        if let animation = nextAnimation {
-            sender.setTitle("Run \(animation.preset)", for: .normal)
-        }
-    }
-    
-    private func springAnimationViewConfigure(_ animation: AnimationModel) {
-        presetLabel.text = "preset: \(animation.preset)"
-        curveLabel.text = "curve: \(animation.curve)"
-        forceLabel.text = "force: \(animation.force)"
-        durationLabel.text = "duration: \(animation.duration)"
-        delayLabel.text = "delay: \(animation.delay)"
+        sender.setTitle("Run \(nextAnimation.preset)", for: .normal)
     }
 }
 
