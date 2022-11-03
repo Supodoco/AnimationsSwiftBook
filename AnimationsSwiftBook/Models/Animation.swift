@@ -23,15 +23,9 @@ struct Animation {
     }
     
     static func getRandomAnimation() -> Animation {
-        let store = DataStore.shared
-        var options = ("", "")
-        if let preset = store.presets.randomElement(),
-           let curve = store.curves.randomElement() {
-            options = (preset, curve)
-        }
-        return Animation(
-            preset: options.0,
-            curve: options.1,
+        Animation(
+            preset: DataStore.shared.presets.randomElement()?.rawValue ?? "shake",
+            curve: DataStore.shared.presets.randomElement()?.rawValue ?? "easeIn",
             force: Double.random(in: 1...2),
             duration: Double.random(in: 0.7...1.5),
             delay: 0.3

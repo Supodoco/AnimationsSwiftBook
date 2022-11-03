@@ -6,34 +6,13 @@
 //
 
 import Foundation
+import SpringAnimation
 
 class DataStore {
     static let shared = DataStore()
         
-    let presets = [
-        "fadeIn",
-        "flipX",
-        "fadeOutIn",
-        "fadeInLeft",
-        "fadeInRight",
-        "fadeInDown",
-        "fadeInUp",
-        "zoomIn",
-        "flipY",
-        "shake"
-    ]
-    let curves = [
-        "easeIn",
-        "easeOut",
-        "easeInOut",
-        "linear",
-        "spring",
-        "easeInSine",
-        "easeOutSine",
-        "easeInOutSine",
-        "easeInQuad",
-        "easeOutQuad"
-    ]
+    let presets = AnimationPreset.allCases
+    let curves = AnimationCurve.allCases
     
     private init() {}
 }
